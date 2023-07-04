@@ -3,7 +3,7 @@ import { useTable, useSortBy } from "react-table";
 import { useNavigate } from "react-router-dom";
 import { getServers } from "../../services/Server.service";
 import Server from "../../interfaces/Server";
-import Loading from "../Loading";
+import Loading from "../Loading/Loading";
 import styles from "./ServerList.module.css";
 
 const ServerList: React.FC = () => {

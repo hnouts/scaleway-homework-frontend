@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import ServerDetails from "../ServerDetails/ServerDetails";
 import ServerList from "../ServerList/ServerList";
-import Loading from "../Loading";
+import Loading from "../Loading/Loading";
 
 const AppRoutes = () => {
   return (

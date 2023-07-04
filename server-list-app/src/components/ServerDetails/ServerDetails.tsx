@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getServer } from '../../services/Server.service';
 import Server from '../../interfaces/Server';
-import Loading from '../Loading';
+import Loading from '../Loading/Loading';
 import styles from './ServerDetails.module.css';
 
 const ServerDetails: React.FC = () => {
