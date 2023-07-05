@@ -1,5 +1,3 @@
-// components/ServerDetails.tsx
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getServer } from '../../services/Server.service';

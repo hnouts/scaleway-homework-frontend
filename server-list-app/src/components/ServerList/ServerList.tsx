@@ -13,10 +13,15 @@ const ServerList: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getServers();
-      setTimeout(() => {
-        setServers(data);
+      if (data !== null) {
+        setTimeout(() => {
+          setServers(data);
+          setLoading(false);
+        }, 500);
+      } else {
+        console.log('Error getting server data');
         setLoading(false);
-      }, 500);
+      }
     };
 
     fetchData();
@@ -50,7 +55,6 @@ const ServerList: React.FC = () => {
     useTable({ columns, data }, useSortBy);
 
   const handleRowClick = (row: Server) => {
-    console.log("row", row);
     navigate(`/server/${row.ID}`);
   };
 

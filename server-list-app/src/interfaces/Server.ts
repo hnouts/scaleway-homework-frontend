@@ -1,5 +1,3 @@
-// interfaces/Server.ts
-
 export default interface Server {
     ID: string;
     Name: string;
