@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, Column } from "react-table";
 import { useNavigate } from "react-router-dom";
 import { getServers } from "../../services/Server.service";
 import Server from "../../interfaces/Server";
@@ -27,9 +27,7 @@ const ServerList: React.FC = () => {
     fetchData();
   }, []);
 
-  const data = React.useMemo(() => servers, [servers]);
-
-  const columns: any = React.useMemo(
+  const columns: Array<Column<Server>> = React.useMemo(
     () => [
       {
         Header: "ID",
@@ -52,7 +50,7 @@ const ServerList: React.FC = () => {
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data }, useSortBy);
+    useTable({ columns, data: servers }, useSortBy);
 
   const handleRowClick = (row: Server) => {
     navigate(`/server/${row.ID}`);
@@ -69,7 +67,7 @@ const ServerList: React.FC = () => {
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column: any) => (
+              {headerGroup.headers.map((column) => (
                 <th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   className={styles.header}
