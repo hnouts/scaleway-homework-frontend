@@ -13,6 +13,7 @@ run ```npm start``` to start the app
 ## Test
 
 run ```npm test service``` to run service logic tests
+
 run ```npm test component``` to run component tests
 
 run ```npm test``` to run all tests
