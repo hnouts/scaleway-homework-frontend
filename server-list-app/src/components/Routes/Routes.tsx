@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import ServerDetails from "../ServerDetails/ServerDetails";
-import ServerList from "../ServerList/ServerList";
 import Loading from "../Loading/Loading";
+const ServerDetails = React.lazy(() => import('../ServerDetails/ServerDetails'));
+const ServerList = React.lazy(() => import('../ServerList/ServerList'));
 
 const AppRoutes = () => {
   return (
@@ -16,6 +16,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/server/:id" element={<ServerDetails />} />
         <Route path="/" element={<ServerList />} />
+        <Route path="*" element={<>Not Found</>} />
       </Routes>
     </Suspense>
   );
