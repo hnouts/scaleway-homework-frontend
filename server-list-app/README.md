@@ -4,10 +4,6 @@
 
 First make sure you have the backend running locally, then:
 
-Go to **server-list-app** directory
-
-```cd server-list-app```
-
 run ```npm install``` to install dependencies
 
 ## How to run
