@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from "./Loading.module.css";
 
 const Loading: React.FC = () => {
   return(
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '20px' }} data-testid="loading">
+    <div className={styles.container} data-testid="loading">
       <p>Loading...</p>
     </div>
 )};
